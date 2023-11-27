@@ -34,8 +34,8 @@ class RecordInfo {
         genderButtonGroup.add(other);
 
         JLabel countryLabel = new JLabel("Country");
-        String[] countryList = {"Nepal", "Australia", "India", "China", "Bhutan",
-            "America", "Bangladesh", "Pakistan", "Africa", "Maldives"};
+        String[] countryList = { "Nepal", "Australia", "India", "China",
+                "America" };
         JComboBox comboBox = new JComboBox<>(countryList);
 
         // Add components to the left panel
@@ -63,10 +63,9 @@ class RecordInfo {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 0); // Add 10 pixels of spacing below each button
 
-//        JButton showDataButton = new JButton("Show Saved Data");
-//        rightPanel.add(showDataButton, gbc);
-////     
-
+        // JButton showDataButton = new JButton("Show Saved Data");
+        // rightPanel.add(showDataButton, gbc);
+        ////
         rightPanel.add(addButton, gbc);
         rightPanel.add(cancelButton, gbc);
         rightPanel.add(resetButton, gbc);
@@ -82,7 +81,7 @@ class RecordInfo {
         f.setVisible(true);
 
         addButton.addActionListener(new ActionListener() {
-//            @Override 
+            // @Override
             public void actionPerformed(ActionEvent ae) {
                 try {
                     String selectedGender = "";
@@ -117,7 +116,7 @@ class RecordInfo {
                     System.out.println("Gender is " + selectedGender);
                     System.out.println("country " + selectedCountry);
 
-                    FileOutputStream fos = new FileOutputStream("userdata.txt");
+                    FileOutputStream fos = new FileOutputStream(fname + ".txt");
                     OutputStreamWriter osw = new OutputStreamWriter(fos);
                     BufferedWriter writer = new BufferedWriter(osw);
                     writer.write("First name : " + fname);
@@ -153,32 +152,32 @@ class RecordInfo {
 
         });
         // Add an action listener to the "Show Saved Data" button
-//        showDataButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent ae) {
-//                try {
-//                    // Read data from the file
-//                    FileInputStream fis = new FileInputStream("userdata.txt");
-//                    InputStreamReader isr = new InputStreamReader(fis);
-//                    BufferedReader reader = new BufferedReader(isr);
-//
-//                    StringBuilder data = new StringBuilder();
-//                    String line;
-//                    while ((line = reader.readLine()) != null) {
-//                        data.append(line).append("\n");
-//                    }
-//
-//                    reader.close();
-//                    isr.close();
-//                    fis.close();
-//
-//                    // Display the saved data in a dialog box
-//                    JOptionPane.showMessageDialog(null, "Saved Data:\n" + data.toString());
-//
-//                } catch (Exception e) {
-//                    System.out.println("Error: " + e.getMessage());
-//                }
-//            }
-//        });
+        // showDataButton.addActionListener(new ActionListener() {
+        // public void actionPerformed(ActionEvent ae) {
+        // try {
+        // // Read data from the file
+        // FileInputStream fis = new FileInputStream("userdata.txt");
+        // InputStreamReader isr = new InputStreamReader(fis);
+        // BufferedReader reader = new BufferedReader(isr);
+        //
+        // StringBuilder data = new StringBuilder();
+        // String line;
+        // while ((line = reader.readLine()) != null) {
+        // data.append(line).append("\n");
+        // }
+        //
+        // reader.close();
+        // isr.close();
+        // fis.close();
+        //
+        // // Display the saved data in a dialog box
+        // JOptionPane.showMessageDialog(null, "Saved Data:\n" + data.toString());
+        //
+        // } catch (Exception e) {
+        // System.out.println("Error: " + e.getMessage());
+        // }
+        // }
+        // });
 
     }
 
